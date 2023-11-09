@@ -2,7 +2,7 @@
 		"title": "5irechain WASM",
 		"url": "https://5irescan.ink",
 		"group": "Testnets",
-		"isActive": true,
+		"invertIconInDarkMode": true,
 		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg"
 	}
 ]
