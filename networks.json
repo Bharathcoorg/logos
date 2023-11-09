@@ -3,12 +3,14 @@
 		"url": "https://5irescan.live",
 		"group": "Testnets",
 		"isActive": true,
-		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg"
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg",
+	        "invertIconInDarkMode": true
 	},
 	{
 		"title": "5irechain WASM",
 		"url": "https://5irescan.ink",
 		"group": "Testnets",
-		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg"
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg",
+		"invertIconInDarkMode": true
 	}
 ]
