@@ -1,0 +1,16 @@
+[{
+		"title": "Edgeware EVM",
+		"url": "https://edgscan.live",
+		"group": "Testnets",
+		"isActive": true,
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edg-favicon.svg",
+	  "invertIconInDarkMode": true
+	},
+	{
+		"title": "Edgeware WASM",
+		"url": "https://edgscan.ink",
+		"group": "Testnets",
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edg-favicon.svg",
+		"invertIconInDarkMode": true
+	}
+]
