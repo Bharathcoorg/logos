@@ -6,9 +6,9 @@
 		"icon": "https://raw.githubusercontent.com/blockscout/frontend-configs/main/configs/network-icons/ethereum.svg"
 	},
 	{
-		"title": "Optimism",
-		"url": "https://optimism.blockscout.com/",
-		"group": "Mainnets",
-		"icon": "https://raw.githubusercontent.com/blockscout/frontend-configs/main/configs/network-icons/optimism.svg"
+		"title": "POA Sokol",
+		"url": "https://blockscout.com/poa/sokol",
+		"group": "Other",
+		"icon": "https://raw.githubusercontent.com/blockscout/frontend-configs/main/configs/network-icons/poa-sokol.svg"
 	}
 ]
