@@ -1,14 +1,14 @@
 [{
-		"title": "Ethereum",
-		"url": "https://eth.blockscout.com/",
-		"group": "Mainnets",
+		"title": "5irechain EVM",
+		"url": "https://5irescan.live",
+		"group": "Testnets",
 		"isActive": true,
-		"icon": "https://raw.githubusercontent.com/blockscout/frontend-configs/main/configs/network-icons/ethereum.svg"
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg"
 	},
 	{
-		"title": "POA Sokol",
-		"url": "https://blockscout.com/poa/sokol",
-		"group": "Other",
-		"icon": "https://raw.githubusercontent.com/blockscout/frontend-configs/main/configs/network-icons/poa-sokol.svg"
+		"title": "5irechain WASM",
+		"url": "https://5irescan.ink",
+		"group": "Testnets",
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg"
 	}
 ]
