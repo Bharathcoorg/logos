@@ -1,9 +1,23 @@
-[{
+[
+	{
 		"title": "5irechain WASM",
 		"url": "https://5irescan.ink",
 		"group": "Testnets",
 		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/5ire-favicon.svg"
 		"isActive": true,
 		"invertIconInDarkMode": true
+	}
+	{
+		"title": "Ethereum",
+		"url": "https://eth.blockscout.com/",
+		"group": "Mainnets",
+		"isActive": true,
+		"icon": "https://raw.githubusercontent.com/blockscout/frontend-configs/main/configs/network-icons/ethereum.svg"
+	},
+	{
+		"title": "Optimism",
+		"url": "https://optimism.blockscout.com/",
+		"group": "Mainnets",
+		"icon": "https://raw.githubusercontent.com/blockscout/frontend-configs/main/configs/network-icons/optimism.svg"
 	}
 ]
