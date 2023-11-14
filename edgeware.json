@@ -1,16 +1,16 @@
 [{
 		"title": "Edgeware EVM",
 		"url": "https://evm.edgscan.ink",
-		"group": "Testnets",
+		"group": "Mainnets",
 		"isActive": true,
-		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edg-favicon.svg",
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edgeware-dark-logomark.svg",
 	  "invertIconInDarkMode": true
 	},
 	{
 		"title": "Edgeware WASM",
 		"url": "https://edgscan.ink",
-		"group": "Testnets",
-		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edg-favicon.svg",
+		"group": "Mainnets",
+		"icon": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edgeware-wasm.svg",
 		"invertIconInDarkMode": true
 	}
 ]
