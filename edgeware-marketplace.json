@@ -1,0 +1,76 @@
+[{
+		"author": "Metamask",
+		"id": "metamask",
+		"title": "Metamask",
+		"logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/768px-MetaMask_Fox.svg.png",
+		"logoDarkMode": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/768px-MetaMask_Fox.svg.png",
+		"categories": ["Wallet"],
+		"shortDescription": "A crypto wallet & gateway to blockchain apps",
+		"site": "https://www.0x.org/",
+		"description": "MetaMask provides the simplest yet most secure way to connect to blockchain-based applications. You are always in control when interacting on the new decentralized web.",
+		"url": "https://dashboard.0x.org/",
+		"external": true
+	},
+	{
+		"author": "Dfinn Wallet",
+		"id": "dfinn-wallet",
+		"title": "Dfinn Wallet",
+		"logo": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/dfinn-logo.png",
+		"categories": ["Wallet"],
+		"shortDescription": "Non-custodial wallet solution for the Substrate and EVM Blockchains",
+		"site": "https://dfinnwallet.app/",
+		"description": "DFINN Wallet emerges as the all-encompassing non-custodial wallet solution catering to Substrate and EVM Blockchains.Riding on the capabilities of Polkadot.js, Dfinn Wallet places a strong emphasis on enriching the user experience and refining the user interface.",
+		"external": true,
+		"url": "https://dfinnwallet.app/"
+	},
+	{
+		"author": "Mainnet Exchange",
+		"id": "mainnet-exchange",
+		"title": "Mainnet Exchange",
+		"logo": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/ME.png",
+		"categories": ["Dex"],
+		"shortDescription": "Multichain Decentralized Exchange.",
+		"site": "https://app.mainnet.exchange/",
+		"description": "Trade with confidence, harness the power of the Ethereum Virtual Machine, and dive into a world of borderless possibilities. Join the evolution of decentralized trading.",
+		"external": true,
+		"url": "https://app.mainnet.exchange/"
+	},
+	{
+		"author": "Mainnet Bridge",
+		"id": "mainnet-bridge",
+		"title": "Mainnet Bridge",
+		"logo": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/ME.png",
+		"categories": ["Bridge"],
+		"shortDescription": "Multichain EVM Bridge",
+		"site": "https://bridge.base.org/",
+		"description": "Seamlessly Bridge and Expand Possibilities with Our EVM Bridge.Embrace cross-chain functionality, unlock new horizons, and amplify the potential of decentralized ecosystems.",
+		"external": true,
+		"url": "https://bridge.mainnet.exchange/"
+	},
+	{
+		"author": " MePAD",
+		"id": "mepad",
+		"title": "MePAD",
+		"logo": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/ME.png",
+		"logoDarkMode": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/ME.png",
+		"categories": ["launchpad"],
+		"shortDescription": "MePAD, Multichain IDO Launchpad",
+		"site": "https://ido.mainnet.exchange/",
+		"external": true,
+		"description": "Get ready to participate in the future of blockchain innovation and secure your place in the forefront of crypto evolution.",
+		"url": "https://ido.mainnet.exchange/"
+	},
+	{
+		"author": "Edgverse Exchange",
+		"id": "edgeverse-exchange",
+		"title": "Edgeverse Exchange",
+		"logo": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edgeware-dark-logomark.svg",
+		"logoDarkMode": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/edgeware-white-logomark.svg",
+		"categories": ["DEX"],
+		"shortDescription": "Edgeverse Exchange aggregator",
+		"site": "https://edgeverse.exchange/",
+		"external": true,
+		"description": "Edgeverse Exchange aggregator, is a powerful tool in the world of decentralized finance (DeFi) that simplifies and enhances the process of trading cryptocurrencies on various decentralized exchanges.",
+		"url": "https://edgeverse.exchange/"
+	}
+]
