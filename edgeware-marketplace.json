@@ -28,7 +28,7 @@
 		"id": "mainnet-exchange",
 		"title": "Mainnet Exchange",
 		"logo": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/ME.png",
-		"categories": ["Dex"],
+		"categories": ["DEX"],
 		"shortDescription": "Multichain Decentralized Exchange.",
 		"site": "https://app.mainnet.exchange/",
 		"description": "Trade with confidence, harness the power of the Ethereum Virtual Machine, and dive into a world of borderless possibilities. Join the evolution of decentralized trading.",
