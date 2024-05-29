@@ -1,0 +1,26 @@
+[{
+		"author": "Metamask",
+		"id": "metamask",
+		"title": "Metamask",
+		"logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/768px-MetaMask_Fox.svg.png",
+		"logoDarkMode": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/768px-MetaMask_Fox.svg.png",
+		"categories": ["Wallet"],
+		"shortDescription": "A crypto wallet & gateway to blockchain apps",
+		"site": "https://www.0x.org/",
+		"description": "MetaMask provides the simplest yet most secure way to connect to blockchain-based applications. You are always in control when interacting on the new decentralized web.",
+		"url": "https://dashboard.0x.org/",
+		"external": true
+	},
+	{
+		"author": "Dfinn Wallet",
+		"id": "dfinn-wallet",
+		"title": "Dfinn Wallet",
+		"logo": "https://raw.githubusercontent.com/Bharathcoorg/logos/main/dfinn-logo.png",
+		"categories": ["Wallet"],
+		"shortDescription": "Non-custodial wallet solution for the Substrate and EVM",
+		"site": "https://dfinnwallet.app/",
+		"description": "DFINN Wallet emerges as the all-encompassing non-custodial wallet solution catering to Substrate and EVM Blockchains.Riding on the capabilities of Polkadot.js, Dfinn Wallet places a strong emphasis on enriching the user experience and refining the user interface.",
+		"external": true,
+		"url": "https://dfinnwallet.app/"
+	}
+]
