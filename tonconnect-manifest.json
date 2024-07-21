@@ -1,7 +1,86 @@
 {
-  "manifest": {
-    "name": "Grams",
-    "description": "Short Video",
-    "url": "https://grama-app.vercel.app"
-  }
+  "url": "https://grama-app.vercel.app/",
+  "name": "Your App Name",
+  "iconUrl": "https://your-app-domain.com/icon.png",
+  "termsOfUseUrl": "https://your-app-domain.com/terms",
+  "privacyPolicyUrl": "https://your-app-domain.com/privacy",
+  "wallets": [
+    {
+      "app_name": "tonwallet",
+      "name": "TON Wallet",
+      "image": "https://wallet.ton.org/assets/ui/qr-logo.png",
+      "about_url": "https://chrome.google.com/webstore/detail/ton-wallet/nphplpgoakhhjchkkhmiggakijnkhfnd",
+      "universal_url": "https://wallet.ton.org/ton-connect",
+      "bridge": [
+        {
+          "type": "js",
+          "key": "tonwallet"
+        }
+      ],
+      "platforms": ["chrome"]
+    },
+    {
+      "app_name": "nicegramWallet",
+      "name": "Nicegram Wallet",
+      "image": "https://static.nicegram.app/icon.png",
+      "about_url": "https://nicegram.app",
+      "universal_url": "https://nicegram.app/tc",
+      "deepLink": "nicegram-tc://",
+      "bridge": [
+        {
+          "type": "js",
+          "key": "nicegramWallet"
+        },
+        {
+          "type": "sse",
+          "url": "https://bridge.tonapi.io/bridge"
+        }
+      ],
+      "platforms": ["ios", "android"]
+    },
+    {
+      "app_name": "binanceTonWeb3Wallet",
+      "name": "Binance Web3 Wallet",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMEIwRTExIi8+CjxwYXRoIGQ9Ik01IDE1TDcuMjU4MDYgMTIuNzQxOUw5LjUxNjEzIDE1TDcuMjU4MDYgMTcuMjU4MUw1IDE1WiIgZmlsbD0iI0YwQjkwQiIvPgo8cGF0aCBkPSJNOC44NzA5NyAxMS4xMjlMMTUgNUwyMS4xMjkgMTEuMTI5TDE4Ljg3MSAxMy4zODcxTDE1IDkuNTE2MTNMMTEuMTI5IDEzLjM4NzFMOC44NzA5NyAxMS4xMjlaIiBmaWxsPSIjRjBCOTBCIi8+CjxwYXRoIGQ9Ik0xMi43NDE5IDE1TDE1IDEyLjc0MTlMMTcuMjU4MSAxNUwxNSAxNy4yNTgxTDEyLjc0MTkgMTVaIiBmaWxsPSIjRjBCOTBCIi8+CjxwYXRoIGQ9Ik0xMS4xMjkgMTYuNjEyOUw4Ljg3MDk3IDE4Ljg3MUwxNSAyNUwyMS4xMjkgMTguODcxTDE4Ljg3MSAxNi42MTI5TDE1IDIwLjQ4MzlMMTEuMTI5IDE2LjYxMjlaIiBmaWxsPSIjRjBCOTBCIi8+CjxwYXRoIGQ9Ik0yMC40ODM5IDE1TDIyLjc0MTkgMTIuNzQxOUwyNSAxNUwyMi43NDE5IDE3LjI1ODFMMjAuNDgzOSAxNVoiIGZpbGw9IiNGMEI5MEIiLz4KPC9zdmc+Cg==",
+      "aboutUrl": "https://www.binance.com/en/web3wallet",
+      "deepLink": "bnc://app.binance.com/cedefi/ton-connect",
+      "bridgeUrl": "https://bridge.tonapi.io/bridge",
+      "platforms": ["chrome", "safari", "ios", "android"],
+      "universalLink": "https://app.binance.com/cedefi/ton-connect"
+    },
+    {
+      "app_name": "okxTonWallet",
+      "name": "OKX Wallet",
+      "image": "https://static.okx.com/cdn/assets/imgs/247/58E63FEA47A2B7D7.png",
+      "aboutUrl": "https://www.okx.com/web3",
+      "universalLink": "https://www.ouxyi.link/ul/uYJPB0",
+      "bridgeUrl": "https://www.okx.com/tonbridge/discover/rpc/bridge",
+      "jsBridgeKey": "okxTonWallet",
+      "platforms": ["chrome", "safari", "firefox", "ios", "android"]
+    },
+    {
+      "app_name": "okxTonWalletTr",
+      "name": "OKX TR Wallet",
+      "image": "https://static.okx.com/cdn/assets/imgs/247/587A8296F0BB640F.png",
+      "aboutUrl": "https://tr.okx.com/web3",
+      "universalLink": "https://www.ouxyi.link/ul/uYJPB0?entityId=5",
+      "bridgeUrl": "https://www.okx.com/tonbridge/discover/rpc/bridge",
+      "jsBridgeKey": "okxTonWallet",
+      "platforms": ["chrome", "safari", "firefox", "ios", "android"]
+    },
+    {
+      "app_name": "telegram-wallet",
+      "name": "Telegram Wallet",
+      "image": "https://wallet.tg/images/logo-288.png",
+      "about_url": "https://wallet.tg/",
+      "universal_url": "https://t.me/wallet?attach=wallet",
+      "bridge": [
+        {
+          "type": "sse",
+          "url": "https://bridge.ton.space/bridge"
+        }
+      ],
+      "platforms": ["ios", "android", "macos", "windows", "linux"]
+    }
+  ]
 }
