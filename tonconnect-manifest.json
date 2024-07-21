@@ -1,7 +1,62 @@
 {
-  "manifest": {
-    "name": "Grams",
-    "description": "Short Video",
-    "url": "https://grama-app.vercel.app"
-  }
+  "url": "https://grama-app.vercel.app",
+  "name": "GRAMS",
+  "iconUrl": "https://your-app-domain.com/icon.png", // Replace with your app icon URL
+  "termsOfUseUrl": "https://your-app-domain.com/terms", // Replace with your terms of use URL
+  "privacyPolicyUrl": "https://your-app-domain.com/privacy", // Replace with your privacy policy URL
+  "wallets": [
+    {
+      "app_name": "tonkeeper",
+      "name": "Tonkeeper",
+      "image": "https://tonkeeper.com/assets/tonconnect-icon.png",
+      "tondns": "tonkeeper.ton",
+      "about_url": "https://tonkeeper.com",
+      "universal_url": "https://app.tonkeeper.com/ton-connect",
+      "deepLink": "tonkeeper-tc://",
+      "bridge": [
+        {
+          "type": "sse",
+          "url": "https://bridge.tonapi.io/bridge"
+        },
+        {
+          "type": "js",
+          "key": "tonkeeper"
+        }
+      ],
+      "platforms": ["ios", "android", "chrome", "firefox", "macos"]
+    },
+    {
+      "app_name": "telegram-wallet",
+      "name": "Telegram Wallet",
+      "image": "https://wallet.tg/images/logo-288.png",
+      "about_url": "https://wallet.tg/",
+      "universal_url": "https://t.me/wallet?attach=wallet",
+      "bridge": [
+        {
+          "type": "sse",
+          "url": "https://bridge.ton.space/bridge"
+        }
+      ],
+      "platforms": ["ios", "android", "macos", "windows", "linux"]
+    },
+    {
+      "app_name": "bitgetTonWallet",
+      "name": "Bitget Wallet",
+      "image": "https://raw.githubusercontent.com/bitkeepwallet/download/main/logo/png/bitget_wallet_logo_0_gas_fee.png",
+      "about_url": "https://web3.bitget.com",
+      "deepLink": "bitkeep://",
+      "bridge": [
+        {
+          "type": "js",
+          "key": "bitgetTonWallet"
+        },
+        {
+          "type": "sse",
+          "url": "https://bridge.tonapi.io/bridge"
+        }
+      ],
+      "platforms": ["ios", "android", "chrome"],
+      "universal_url": "https://bkcode.vip/ton-connect"
+    }
+  ]
 }
