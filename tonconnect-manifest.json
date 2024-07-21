@@ -1,0 +1,14 @@
+{
+  "manifest": {
+    "name": "Grams",
+    "description": "Short Video",
+    "url": "https://grams-app.vercel.app",
+    "icons": [
+      {
+        "src": "https://grama-app.vercel.app/logo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+}
