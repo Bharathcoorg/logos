@@ -1389,5 +1389,5 @@ function init(event) {
   loop();
 }
 function sendGameOver(score) {
-    window.parent.postMessage({ type: 'GAME_OVER', score: score }, '*');
-}
+     window.parent.postMessage({ type: 'GAME_OVER', score: score }, '*');
+   }
