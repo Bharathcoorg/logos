@@ -1,18 +1,17 @@
-
 //THREEJS RELATED VARIABLES 
 
 var scene, 
     camera,
     controls,
     fieldOfView,
-  	aspectRatio,
-  	nearPlane,
-  	farPlane,
+    aspectRatio,
+    nearPlane,
+    farPlane,
     shadowLight, 
     backLight,
     light, 
     renderer,
-		container;
+    container;
 
 var clock = new THREE.Clock();
 var time = 0;
@@ -25,11 +24,16 @@ var floor, lion, fan,
 //SCREEN VARIABLES
 
 var HEIGHT,
-  	WIDTH,
+    WIDTH,
     windowHalfX,
-  	windowHalfY,
+    windowHalfY,
     mousePos = {x:0,y:0};
     dist = 0;
+
+// MINING VARIABLES
+let isHolding = false;
+let coinsMined = 0;
+const MINING_RATE = 0.5; // coins per second
 
 //INIT THREE JS, SCREEN AND MOUSE EVENTS
 
@@ -62,11 +66,12 @@ function init(){
   document.addEventListener('mousedown', handleMouseDown, false);
   document.addEventListener('mouseup', handleMouseUp, false);
   document.addEventListener('touchstart', handleTouchStart, false);
-	document.addEventListener('touchend', handleTouchEnd, false);
-	document.addEventListener('touchmove',handleTouchMove, false);
+  document.addEventListener('touchend', handleTouchEnd, false);
+  document.addEventListener('touchmove',handleTouchMove, false);
   /*
   controls = new THREE.OrbitControls( camera, renderer.domElement);
   //*/
+  addGameElements();
 }
 
 function onWindowResize() {
@@ -85,28 +90,38 @@ function handleMouseMove(event) {
 
 function handleMouseDown(event) {
   isBlowing = true;
+  isHolding = true;
+  if ('vibrate' in navigator) {
+    navigator.vibrate(200);
+  }
 }
+
 function handleMouseUp(event) {
   isBlowing = false;
+  isHolding = false;
 }
 
 function handleTouchStart(event) {
   if (event.touches.length > 1) {
     event.preventDefault();
-		mousePos = {x:event.touches[0].pageX, y:event.touches[0].pageY};
+    mousePos = {x:event.touches[0].pageX, y:event.touches[0].pageY};
     isBlowing = true;
+    isHolding = true;
+    if ('vibrate' in navigator) {
+      navigator.vibrate(200);
+    }
   }
 }
 
 function handleTouchEnd(event) {
-    //mousePos = {x:windowHalfX, y:windowHalfY};
-    isBlowing = false;
+  isBlowing = false;
+  isHolding = false;
 }
 
 function handleTouchMove(event) {
   if (event.touches.length == 1) {
     event.preventDefault();
-		mousePos = {x:event.touches[0].pageX, y:event.touches[0].pageY};
+    mousePos = {x:event.touches[0].pageX, y:event.touches[0].pageY};
     isBlowing = true;
   }
 }
@@ -118,12 +133,12 @@ function createLights() {
   shadowLight.position.set(200, 200, 200);
   shadowLight.castShadow = true;
   shadowLight.shadowDarkness = .2;
- 	
+  
   backLight = new THREE.DirectionalLight(0xffffff, .4);
   backLight.position.set(-100, 200, 50);
   backLight.shadowDarkness = .1;
   backLight.castShadow = true;
- 	
+  
   scene.add(backLight);
   scene.add(light);
   scene.add(shadowLight);
@@ -521,11 +536,11 @@ Lion = function(){
   this.threegroup.add(this.frontLeftFoot);
     
   this.threegroup.traverse( function ( object ) {
-		if ( object instanceof THREE.Mesh ) {
-			object.castShadow = true;
-			object.receiveShadow = true;
-		}
-	} );
+    if ( object instanceof THREE.Mesh ) {
+      object.castShadow = true;
+      object.receiveShadow = true;
+    }
+  } );
 }
 
 Lion.prototype.updateBody = function(speed){
@@ -678,11 +693,22 @@ Lion.prototype.cool = function(xTarget, yTarget, deltaTime){
   this.body.geometry.verticesNeedUpdate = true;
 }
 
+function updateMining(deltaTime) {
+  if (isHolding) {
+    coinsMined += MINING_RATE * deltaTime;
+    updateCoinInfo();
+  }
+}
+
+function updateCoinInfo() {
+  window.parent.postMessage({ type: 'UPDATE_COINS', coins: coinsMined }, '*');
+}
+
 function loop(){
-  
   deltaTime = clock.getDelta();
   time += deltaTime;
   
+  updateMining(deltaTime);
   render();
   var xTarget = (mousePos.x-windowHalfX);
   var yTarget= (mousePos.y-windowHalfY);
@@ -702,6 +728,23 @@ function render(){
   renderer.render(scene, camera);
 }
 
+function endGame() {
+  window.parent.postMessage({ type: 'END_GAME', coinsMined: coinsMined }, '*');
+}
+
+function addGameElements() {
+  const endGameButton = document.createElement('button');
+  endGameButton.id = 'end-game-button';
+  endGameButton.textContent = 'End Game';
+  endGameButton.style.position = 'absolute';
+  endGameButton.style.bottom = '10px';
+  endGameButton.style.left = '50%';
+  endGameButton.style.transform = 'translateX(-50%)';
+  endGameButton.style.padding = '10px 20px';
+  endGameButton.style.fontSize = '16px';
+  endGameButton.addEventListener('click', endGame);
+  document.body.appendChild(endGameButton);
+}
 
 init();
 createLights();
@@ -709,7 +752,6 @@ createFloor();
 createLion();
 createFan();
 loop();
-
 
 function clamp(v,min, max){
   return Math.min(Math.max(v, min), max);
@@ -722,5 +764,4 @@ function rule3(v,vmin,vmax,tmin, tmax){
   var dt = tmax-tmin;
   var tv = tmin + (pc*dt);
   return tv;
-  
 }
