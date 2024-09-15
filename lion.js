@@ -14,7 +14,7 @@ var scene,
     renderer,
 		container;
 
-var clock = new THREE.Clock();
+//var clock = new THREE.Clock();
 var time = 0;
 var deltaTime = 0;
 
