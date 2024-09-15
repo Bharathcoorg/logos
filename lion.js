@@ -33,7 +33,7 @@ var HEIGHT,
 // MINING VARIABLES
 let isHolding = false;
 let coinsMined = 0;
-const MINING_RATE = 0.5; // coins per second
+const MINING_RATE = 2; // 2 coins per second
 
 //INIT THREE JS, SCREEN AND MOUSE EVENTS
 
@@ -71,7 +71,6 @@ function init(){
   /*
   controls = new THREE.OrbitControls( camera, renderer.domElement);
   //*/
-  addGameElements();
 }
 
 function onWindowResize() {
@@ -91,6 +90,7 @@ function handleMouseMove(event) {
 function handleMouseDown(event) {
   isBlowing = true;
   isHolding = true;
+  window.parent.postMessage({ type: 'START_HOLDING' }, '*');
   if ('vibrate' in navigator) {
     navigator.vibrate(200);
   }
@@ -99,6 +99,7 @@ function handleMouseDown(event) {
 function handleMouseUp(event) {
   isBlowing = false;
   isHolding = false;
+  window.parent.postMessage({ type: 'STOP_HOLDING' }, '*');
 }
 
 function handleTouchStart(event) {
@@ -107,6 +108,7 @@ function handleTouchStart(event) {
     mousePos = {x:event.touches[0].pageX, y:event.touches[0].pageY};
     isBlowing = true;
     isHolding = true;
+    window.parent.postMessage({ type: 'START_HOLDING' }, '*');
     if ('vibrate' in navigator) {
       navigator.vibrate(200);
     }
@@ -116,6 +118,7 @@ function handleTouchStart(event) {
 function handleTouchEnd(event) {
   isBlowing = false;
   isHolding = false;
+  window.parent.postMessage({ type: 'STOP_HOLDING' }, '*');
 }
 
 function handleTouchMove(event) {
@@ -701,7 +704,7 @@ function updateMining(deltaTime) {
 }
 
 function updateCoinInfo() {
-  window.parent.postMessage({ type: 'UPDATE_COINS', coins: coinsMined }, '*');
+  window.parent.postMessage({ type: 'UPDATE_COINS', amount: MINING_RATE * deltaTime }, '*');
 }
 
 function loop(){
@@ -729,29 +732,8 @@ function render(){
 }
 
 function endGame() {
-  window.parent.postMessage({ type: 'END_GAME', coinsMined: coinsMined }, '*');
+  window.parent.postMessage({ type: 'EXIT_GAME', coinsMined: coinsMined }, '*');
 }
-
-function addGameElements() {
-  const endGameButton = document.createElement('button');
-  endGameButton.id = 'end-game-button';
-  endGameButton.textContent = 'End Game';
-  endGameButton.style.position = 'absolute';
-  endGameButton.style.bottom = '10px';
-  endGameButton.style.left = '50%';
-  endGameButton.style.transform = 'translateX(-50%)';
-  endGameButton.style.padding = '10px 20px';
-  endGameButton.style.fontSize = '16px';
-  endGameButton.addEventListener('click', endGame);
-  document.body.appendChild(endGameButton);
-}
-
-init();
-createLights();
-createFloor();
-createLion();
-createFan();
-loop();
 
 function clamp(v,min, max){
   return Math.min(Math.max(v, min), max);
@@ -765,3 +747,22 @@ function rule3(v,vmin,vmax,tmin, tmax){
   var tv = tmin + (pc*dt);
   return tv;
 }
+
+function updateCoinPoolBalance(balance) {
+  document.getElementById('coin-pool-balance').textContent = 'Coin Pool: ' + Math.floor(balance);
+}
+
+window.addEventListener('message', (event) => {
+  if (event.data.type === 'UPDATE_COIN_POOL_BALANCE') {
+    updateCoinPoolBalance(event.data.balance);
+  }
+});
+
+document.getElementById('exit-button').addEventListener('click', endGame);
+
+init();
+createLights();
+createFloor();
+createLion();
+createFan();
+loop();
