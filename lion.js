@@ -198,6 +198,19 @@ Fan = function(){
 }
 
 Fan.prototype.update = function(xTarget, yTarget, deltaTime){
+	console.log("Fan.update() called");
+  console.log("isBlowing:", this.isBlowing);
+  console.log("targetSpeed:", this.targetSpeed);
+  console.log("speed:", this.speed);
+  console.log("acc:", this.acc);
+  console.log("propeller.rotation.z:", this.propeller.rotation.z);
+
+  // Visual debugging (optional):
+  if (this.isBlowing) {
+    this.core.material.color.setHex(0xff0000); // Red when blowing
+  } else {
+    this.core.material.color.setHex(0x653f4c); // Original color
+  }
   this.threegroup.lookAt(new THREE.Vector3(0,80,60));
   this.tPosX = rule3(xTarget, -200, 200, -250, 250);
   this.tPosY = rule3(yTarget, -200, 200, 250, -250);
