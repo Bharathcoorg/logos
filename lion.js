@@ -1,4 +1,3 @@
-
 //THREEJS RELATED VARIABLES 
 
 var scene, 
@@ -20,7 +19,7 @@ var deltaTime = 0;
 
 //SCENE
 var floor, lion, fan,
-    isBlowing = false;
+    isBlowing = false; // Make sure this is accessible globally
 
 //SCREEN VARIABLES
 
