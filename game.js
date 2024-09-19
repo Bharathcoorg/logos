@@ -26,7 +26,7 @@ var cameraPosGameOver = 260;
 var monsterAcceleration = 0.004;
 var malusClearColor = 0xb44b39;
 var malusClearAlpha = 0;
-var audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/Antonio-Vivaldi-Summer_01.mp3');
+//var audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/Antonio-Vivaldi-Summer_01.mp3');
 
 var fieldGameOver, fieldDistance;
 
@@ -1239,7 +1239,7 @@ function resetGame() {
   gameStatus = "play";
   hero.status = "running";
   hero.nod();
-  audio.play();
+  //audio.play();
   updateLevel();
   levelInterval = setInterval(updateLevel, levelUpdateFreq);
 }
