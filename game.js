@@ -107,6 +107,8 @@ function initScreenAnd3D() {
   camera.position.z = cameraPosGame;
   camera.position.y = 30;
   camera.lookAt(new THREE.Vector3(0, 30, 0));
+  camera.position.z *= 1.1;
+  camera.updateProjectionMatrix();
 
   renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
