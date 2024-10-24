@@ -1169,8 +1169,7 @@ function getMalus() {
 
 function updateDistance() {
   distance += delta * speed;
-  var d = distance / 2;
-  fieldDistance.innerHTML = Math.floor(d);
+  fieldDistance.innerHTML = Math.floor(distance);
 }
 
 function updateLevel() {
